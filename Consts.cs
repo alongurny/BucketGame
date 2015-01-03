@@ -15,8 +15,9 @@ using System.Windows.Shapes;
 using Microsoft.Kinect;
 namespace BucketGame
 {
-    class Consts
+    public static class Consts
     {
+        /// <summary> Colors of the buckets </summary>
         public static readonly Brush[] Colors = { Brushes.Blue, Brushes.Red, Brushes.Yellow, Brushes.Green };
         public static readonly int ShapeRadius = 30, TouchingDistance = 35, NumberOfPortals = Colors.Length,
             ScreenWidth = 640, ScreenHeight = 480, PortalSize = 100,

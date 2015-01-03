@@ -4,8 +4,8 @@
         xmlns:k="clr-namespace:Microsoft.Kinect;assembly=Microsoft.Kinect"
         xmlns:t="clr-namespace:Microsoft.Kinect.Toolkit;assembly=Microsoft.Kinect.Toolkit"
         xmlns:c="clr-namespace:Microsoft.Kinect.Toolkit.Controls;assembly=Microsoft.Kinect.Toolkit.Controls"
-        xmlns:controls="clr-namespace:BucketGame"
-        Title="MainWindow" Width="640" Height="480">
+        xmlns:local="clr-namespace:BucketGame"
+        Title="MainWindow" Width="640" Height="480" Loaded="Window_Loaded">
     <Grid>
         <Canvas Width="640" Height="480" x:Name="PortalGrid">
             <Image x:Name="frame" HorizontalAlignment="Left"  Margin="0,0,-8,-30" VerticalAlignment="Top" Width="640" Height="480"/>

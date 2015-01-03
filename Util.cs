@@ -16,8 +16,10 @@ using Microsoft.Kinect;
 
 namespace BucketGame
 {
-    class Util
+    public class Util
     {
+        public static readonly Random Random = new Random();
+
         public static Point RandomPoint(Random random)
         {
             Point p = new Point(random.Next(Consts.ScreenWidth - 100), random.Next(Consts.ScreenHeight - 100));
@@ -33,9 +35,9 @@ namespace BucketGame
             } while (Util.IsFairDistanceFromAll(ran, points));
             return ran;
         }
-        public static Point RandomPointAtTopHalfOfScreen(Random random)
+        public static Point RandomPointAtTopHalfOfScreen()
         {
-            return new Point(random.Next(Consts.PortalSize,Consts.ScreenWidth-Consts.PortalSize), random.Next(0,Consts.ScreenHeight / 2));
+            return new Point(Random.Next(Consts.PortalSize, Consts.ScreenWidth - Consts.PortalSize), Random.Next(0, Consts.ScreenHeight / 2));
         }
         public static bool IsFairDistanceFromAll(Point p, params Point[] points)
         {
@@ -68,11 +70,11 @@ namespace BucketGame
             Polygon p = new Polygon();
             p.Width = 2 * radius;
             p.Height = 2 * radius;
-            double deltaAngle = 2 * Math.PI / n ;
+            double deltaAngle = 2 * Math.PI / n;
             double startAngle = Math.PI / n;
             for (int i = 0; i < n; i++)
             {
-                p.Points.Add(new Point(radius + Math.Sin(i * deltaAngle + startAngle) * radius,  radius + Math.Cos(i * deltaAngle + startAngle) * radius));
+                p.Points.Add(new Point(radius + Math.Sin(i * deltaAngle + startAngle) * radius, radius + Math.Cos(i * deltaAngle + startAngle) * radius));
             }
             return p;
         }
@@ -100,17 +102,17 @@ namespace BucketGame
 
         public static Point NewPoint(Skeleton skel, JointType joint, DepthImageFrame depth)
         {
-           SkeletonPoint point = skel.Joints[joint].Position;
-           if (depth == null)
-           {
-               MessageBox.Show("depth null");
-           }
-           if (point == null)
-           {
-               MessageBox.Show("point null");
-           }
-           DepthImagePoint dip = depth.MapFromSkeletonPoint(point);
-           return new Point(dip.X, dip.Y);
+            SkeletonPoint point = skel.Joints[joint].Position;
+            if (depth == null)
+            {
+                MessageBox.Show("depth null");
+            }
+            if (point == null)
+            {
+                MessageBox.Show("point null");
+            }
+            DepthImagePoint dip = depth.MapFromSkeletonPoint(point);
+            return new Point(dip.X, dip.Y);
         }
 
         public static Point ToPoint(Polygon elem)
@@ -129,13 +131,13 @@ namespace BucketGame
         public static double Distance(Point p1, Point p2)
         {
             double dx = p2.X - p1.X, dy = p2.Y - p1.Y;
-            return Math.Sqrt(dx*dx + dy*dy);
+            return Math.Sqrt(dx * dx + dy * dy);
         }
         public static Point ToPoint(dynamic point)
         {
             return new Point(point.X, point.Y);
         }
 
-        
+
     }
 }

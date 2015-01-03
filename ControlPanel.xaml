@@ -1,0 +1,10 @@
+﻿<Window x:Class="BucketGame.ControlPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BucketGame"
+        Title="ControlPanel" Height="640" Width="480" Margin="100">
+    <Grid>
+        <TextBlock>
+        </TextBlock>
+    </Grid>
+</Window>
