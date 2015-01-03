@@ -1,0 +1,19 @@
+﻿<Window x:Class="BucketGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="clr-namespace:Microsoft.Kinect;assembly=Microsoft.Kinect"
+        xmlns:t="clr-namespace:Microsoft.Kinect.Toolkit;assembly=Microsoft.Kinect.Toolkit"
+        xmlns:c="clr-namespace:Microsoft.Kinect.Toolkit.Controls;assembly=Microsoft.Kinect.Toolkit.Controls"
+        xmlns:controls="clr-namespace:BucketGame"
+        Title="MainWindow" Width="640" Height="480">
+    <Grid>
+        <Canvas Width="640" Height="480" x:Name="PortalGrid">
+            <Image x:Name="frame" HorizontalAlignment="Left"  Margin="0,0,-8,-30" VerticalAlignment="Top" Width="640" Height="480"/>
+            <!--<controls:Bucket Height="100" Width="100" Canvas.Left="100" Canvas.Top="100" x:Name="Portal"></controls:Bucket>-->
+           <Polygon x:Name="pol" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" Height="100" Fill="Green" Canvas.Left="0" Canvas.Top="0"></Polygon>
+            <Label Content="" x:Name="StatusLabel" FontSize="30" Margin="10,162,10,244" HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="612" Foreground="Red"/>
+
+        </Canvas>
+    </Grid>
+
+</Window>
